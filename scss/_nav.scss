@@ -1,0 +1,101 @@
+.header {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    &_brand {
+        width: 13rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        font-family: sans-serif, mo;
+
+        &_img {
+            margin-right: 1rem;
+        }
+
+        &_text {
+            font-size: 20px;
+        }
+    }
+}
+
+.r-nav {
+    display: block;
+    transition: all 0.4s ease-in-out;
+}
+
+.nav {
+    display: inline-flex;
+    margin: auto;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out;
+
+    &-link {
+        font-size: 1.2rem;
+        margin: auto 1.5rem;
+
+        &:hover {
+            color: $secondary_color;
+        }
+    }
+}
+
+.menu-btn {
+    position: absolute;
+    z-index: 1;
+    right: 2rem;
+    top: 2.2rem;
+    height: 20px;
+    width: 28px;
+    cursor: pointer;
+    display: none;
+
+    &_burger {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        width: 28px;
+        height: 3px;
+        background-color: set-text-color($primary-color);
+        transition: all 0.4s ease-in-out;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            width: 28px;
+            height: 3px;
+            background-color: set-text-color($primary-color);
+            transition: all 0.4s ease-in-out;
+
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            width: 20px;
+            height: 3px;
+            background-color: set-text-color($primary-color);
+            transition: all 0.4s ease-in-out;
+
+        }
+
+        &.open {
+            transform: rotate(360deg);
+            background: transparent;
+
+            &::before {
+                transform: rotate(45deg) translate(5px, 8px);
+            }
+
+            &::after {
+                width: 28px;
+                transform: rotate(-45deg) translate(3px, -7px);
+            }
+        }
+
+    }
+}

@@ -1,0 +1,59 @@
+@include media-md{
+    .header{
+        display: flex;
+        flex-direction: column;
+
+
+
+    .r-nav{
+        position: relative;
+        right: 12px;
+        transform:translateY(0);
+        transition: all 0.9s ease-in-out;
+
+
+        .open{
+            display: block;
+            transform:translateY(0%);
+            transition: all 0.9s ease-in-out;
+        }
+    }
+        .nav{
+            margin-right: 0;
+            flex-direction: column;
+            width: fit-content;
+            display: none;
+            transition: all 0.4s ease-in-out;
+
+            .open{
+                display: block;
+            }
+
+
+            &-item{
+                padding: 0.5em 0;
+                text-align: center;
+            }
+
+        }
+    }
+
+
+    .menu-btn{
+        display: block;
+    }
+
+    .hero{
+
+        &_text{
+            width: 100%;
+            padding: 4em;
+            padding-bottom: 2em;
+            line-height: 2em;
+        }
+
+        .button{
+            margin: 0 auto;
+        }
+    }
+}

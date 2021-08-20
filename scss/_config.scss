@@ -1,0 +1,36 @@
+
+
+$primary_color:#02027A;
+$secondary_color:#FFC94D;
+$text_color:#fff;
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@function set-text-color($color){
+    @if (lightness($color)> 40%){
+        @return #000;
+    }@else{
+        @return #fff;
+    }
+}
+
+@mixin media-md {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (max-width: 1024px){
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (max-width: 1600px){
+        @content;
+    }
+}
