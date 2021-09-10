@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <!--header section-->
     <header class="header">
         <div class="header_brand">
@@ -22,7 +23,7 @@
 
         <nav class="r-nav">
             <ul class="nav">
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
                 <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
@@ -33,17 +34,36 @@
         </div>
 
     </header>
-    <!--login form-->
-    <div class="form card login">
+
+    <!-- signup -->
+    <section class="signup_text">
+        <h2>Apply for a space within the OAU community using the form below</h2>
+    </section>
+    <!--signup form-->
+    <div class="form card">
         <form action="" autocomplete="on" method="POST">
             <div class="form-control">
                 <input type="text" placeholder="Name" required>
             </div>
             <div class="form-control">
+                <input type="Email" placeholder="Email" autofocus required>
+            </div>
+            <div class="form-control">
+                <input type="text" placeholder="Address" autofocus required>
+            </div>
+            <div class="form-control">
+                <input type="text" placeholder="L.G.A" autofocus required>
+            </div>
+            <div class="form-control">
+                <input type="tel" placeholder="Phone no" autofocus required>
+            </div>
+            <div class="form-control">
                 <input type="password" placeholder="Password" minlength="8" autofocus required>
             </div>
-            <a href="#">Forgot password?</a>
-            <button type="submit">Sign In</button>
+            <div class="form-control">
+                <input type="password" placeholder="Confirm Password" minlength="8" autofocus required>
+            </div>
+            <button>Sign Up</button>
 
         </form>
     </div>

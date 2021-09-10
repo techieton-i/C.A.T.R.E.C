@@ -1,0 +1,15 @@
+.details {
+    margin: 2em;
+    width: 92em;
+    background-color: rgb(221,
+            222,
+            221);
+
+    &_name {
+        margin: 1em 4em;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+    }
+
+}

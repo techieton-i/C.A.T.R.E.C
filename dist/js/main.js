@@ -5,15 +5,17 @@ const menuNav = document.querySelector('.nav');
 
 
 let showMenu = false;
+document.parentElement.style.al
 
 menuBtn.addEventListener('click', () => {
-    if(!showMenu){
+    if (!showMenu) {
         hamBurger.classList.add('open');
         nav.classList.add('open');
         menuNav.classList.add('open');
 
+
         showMenu = true;
-    }else{
+    } else {
         hamBurger.classList.remove('open');
         nav.classList.remove('open');
         menuNav.classList.remove('open');
