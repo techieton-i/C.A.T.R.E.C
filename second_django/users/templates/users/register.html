@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        REGISTER
+    </title>
+</head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    {% if user.is_authenticated %}
+        <p>LOGGED IN User: {{ user.email }}
+        <br>
+        Phone : {{ user.user_profile.phone }}<br>
+        Phone : {{ user.user_profile.created_at }}<br>
+        Phone : {{ user.user_profile.updated_at }}</p>
+    {% endif %}
+    <form method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <p>Your form has errors...</p>
+        {% endif %}
+
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-secondary">
+    </form>
+    </body>
+
+</html>
