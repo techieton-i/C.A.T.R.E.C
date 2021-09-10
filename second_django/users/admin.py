@@ -22,12 +22,14 @@ class CustomUserAdmin(UserAdmin):
     ordering = ('email', 'is_superuser', 'reg_number')
     filter_horizontal = ()
     inlines = (UserProfileInline,)
-    list_display = ('email', 'first_name', 'last_name', 'is_staff', 'is_active', 'is_superuser')
+    list_display = ('email', 'first_name', 'last_name',
+                    'is_staff', 'is_active', 'is_superuser')
     list_filter = ('email', 'is_staff', 'is_active', 'is_superuser')
     fieldsets = (
         (None, {'fields': ('email', 'reg_number', 'user_type', 'first_name', 'last_name',
                            'password', 'date_joined', )}),
-        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser', )})
+        ('Permissions', {
+         'fields': ('is_staff', 'is_active', 'is_superuser', )})
     )
     add_fieldsets = (
         (None, {'classes': ('wide',),

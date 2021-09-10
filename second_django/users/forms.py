@@ -5,15 +5,20 @@ from . import constants as user_constants
 
 
 class CustomUserCreationForm(UserCreationForm):
-    first_name = forms.CharField(max_length=20)
-    last_name = forms.CharField(max_length=20)
-    reg_number = forms.CharField(max_length=12, validators=[validate_reg])
-    user_type = forms.ChoiceField(choices=user_constants.USER_TYPE_CHOICES)
+    first_name = forms.CharField(max_length=20, required=True,
+                                 widget=forms.TextInput(attrs={'placeholder': 'First name', 'autofocus': True, }))
+    last_name = forms.CharField(max_length=20, required=True,
+                                widget=forms.TextInput(attrs={'placeholder': 'Last name', 'autofocus': True, }))
+    reg_number = forms.CharField(max_length=12, validators=[validate_reg], required=True,
+                                 widget=forms.TextInput(attrs={'placeholder': 'Input your registration number',
+                                                               'autofocus': True, }))
+    user_type = forms.ChoiceField(choices=user_constants.USER_TYPE_CHOICES, required=True,
+                                  widget=forms.Select(attrs={'class': 'bootstrap-select'}))
 
     class Meta(UserCreationForm):
         model = User
         fields = ('email', 'first_name', 'last_name', 'reg_number',
-                  'user_type', 'is_superuser', 'password1', 'password2', )
+                  'user_type', 'password1', 'password2', )
 
 
 class CustomUserChangeForm(UserChangeForm):
