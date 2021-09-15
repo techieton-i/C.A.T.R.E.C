@@ -1,3 +1,4 @@
 .vscode
-second_django
+second_django/second_django
+users
 db.sqlite3

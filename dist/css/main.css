@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -282,9 +283,13 @@
 }
 
 .details {
-  margin: 2em;
-  width: 92em;
+  width: 100%;
+  height: 100%;
   background-color: #dddedd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2em;
 }
 
 .details_name {
@@ -298,8 +303,31 @@
           align-items: center;
 }
 
+.details_name > h3 {
+  width: 8em;
+}
+
+.details_name > p {
+  width: 30em;
+  margin: 0 3em;
+  padding: 0.8em;
+  border-radius: 10px;
+  background-color: #ebebeb;
+}
+
+.details_img {
+  border: 3px solid gray;
+  height: 210px;
+  width: 210px;
+  text-align: center;
+  margin: 2em 5em;
+  border-radius: 10px;
+  background: url("/asset/img/bg-hero.jpg") center;
+}
+
 body {
   background-color: #aab6c4;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 img {
