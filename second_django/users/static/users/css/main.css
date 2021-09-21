@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .header {
@@ -11,8 +13,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .header_brand {
@@ -21,13 +23,13 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   font-family: sans-serif, mo;
 }
 
@@ -110,25 +112,27 @@
 
 .menu-btn_burger.open {
   -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
+  transform: rotate(360deg);
   background: transparent;
 }
 
 .menu-btn_burger.open::before {
   -webkit-transform: rotate(45deg) translate(5px, 8px);
-          transform: rotate(45deg) translate(5px, 8px);
+  transform: rotate(45deg) translate(5px, 8px);
 }
 
 .menu-btn_burger.open::after {
   width: 28px;
   -webkit-transform: rotate(-45deg) translate(3px, -7px);
-          transform: rotate(-45deg) translate(3px, -7px);
+  transform: rotate(-45deg) translate(3px, -7px);
 }
 
 .hero {
   height: 70vh;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 2, 122, 0.9)), to(rgba(2, 2, 122, 0.3))), url("/asset/img/bg-hero.jpg");
-  background: linear-gradient(to right, rgba(2, 2, 122, 0.9), rgba(2, 2, 122, 0.3)), url("/asset/img/bg-hero.jpg");
+  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 2, 122, 0.9)), to(rgba(2, 2, 122, 0.3))),
+  url("{% static 'users\images\bg-hero.jpg' %}");
+  background: linear-gradient(to right, rgba(2, 2, 122, 0.9), rgba(2, 2, 122, 0.3)),
+  url("{% static 'users\images\bg-hero.jpg' %}");
   background-size: cover;
 }
 
@@ -138,6 +142,7 @@
   padding: 5em;
   margin: auto;
   color: #fff;
+  font-size: larger;
 }
 
 .hero_text p {
@@ -159,7 +164,8 @@
   border-radius: 20px;
 }
 
-.hero .form_links:hover, .hero .form_links :focus {
+.hero .form_links:hover,
+.hero .form_links :focus {
   background-color: #FFC94D;
   color: #02027A;
 }
@@ -229,30 +235,33 @@
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
   }
+
   .header .r-nav {
     position: relative;
     right: 12px;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     -webkit-transition: all 0.9s ease-in-out;
     transition: all 0.9s ease-in-out;
   }
+
   .header .r-nav .open {
     display: block;
     -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
     -webkit-transition: all 0.9s ease-in-out;
     transition: all 0.9s ease-in-out;
   }
+
   .header .nav {
     margin-right: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -260,46 +269,101 @@
     -webkit-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
   }
+
   .header .nav .open {
     display: block;
   }
+
   .header .nav-item {
     padding: 0.5em 0;
     text-align: center;
   }
+
   .menu-btn {
     display: block;
   }
+
   .hero_text {
     width: 100%;
     padding: 4em;
     padding-bottom: 2em;
     line-height: 2em;
   }
+
   .hero .button {
     margin: 0 auto;
   }
 }
 
 .details {
-  margin: 2em;
-  width: 92em;
+  width: 100%;
+  height: 100%;
   background-color: #dddedd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2em;
 }
 
 .details_name {
-  margin: 1em 4em;
+  margin: 1em 5em;
   padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.details_name>h3 {
+  width: 8em;
+}
+
+.details_name>p {
+  width: 30em;
+  margin: 0 2em;
+  padding: 0.8em;
+  border-radius: 10px;
+  background-color: #ebebeb;
+}
+
+/* .details_img {
+  border: 3px solid gray;
+  height: 210px;
+  width: 210px;
+  text-align: center;
+  margin: 2em 5em;
+  border-radius: 10px;
+  background: url("/users/static/users/images/bg-hero.jpg") center;
+} */
+
+.picture {
+  margin-left: 0px;
+  width: min-content
+}
+
+.profile_pic {
+  border: 3px solid gray;
+  height: 210px;
+  width: 210px;
+  text-align: center;
+  margin: 2em 5em;
+  border-radius: 10px;
+  background-position: center;
+
+}
+
+.upload_btn {
+  width: 210px;
+  margin: 2em 7em;
+  cursor: pointer;
 }
 
 body {
   background-color: #aab6c4;
+  font-family: 'Source Sans Pro', sans-serif;
+  overflow-x: hidden;
 }
 
 img {
@@ -326,7 +390,7 @@ a {
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 2.1em;
   font-family: monospace;
 }
 
@@ -334,7 +398,7 @@ h2 {
   background-color: #fff;
   border-radius: 10px;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 10px;
   color: #333;
@@ -376,10 +440,10 @@ form {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
 
 footer {
@@ -389,4 +453,5 @@ footer {
   height: 20vh;
   background-color: #02027A;
 }
+
 /*# sourceMappingURL=main.css.map */

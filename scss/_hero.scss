@@ -1,37 +1,39 @@
-.hero{
+.hero {
     height: 70vh;
-    background:linear-gradient(
-        to right,
-        rgba($primary-color,0.9),
-        rgba($primary-color, 0.3)
-    ),
-    url("/asset/img/bg-hero.jpg");
+    background: linear-gradient(to right,
+            rgba($primary-color, 0.9),
+            rgba($primary-color, 0.3)),
+        url("/asset/img/bg-hero.jpg");
     background-size: cover;
 
-    &_text{
+    &_text {
         text-align: center;
         width: 50%;
         padding: 5em;
-        margin:auto;
+        margin: auto;
         color: $text_color;
+        font-size: larger;
 
-        p{
-            line-height: 1.5rem;        }
+        p {
+            line-height: 1.5rem;
+        }
     }
 
 
-    .button{
+    .button {
         width: fit-content;
         margin: auto;
     }
-    .form_links{
+
+    .form_links {
         border: 2px solid $secondary_color;
         width: 10rem;
         padding: 0.7rem;
         margin-left: 1rem;
         border-radius: 20px;
 
-        &:hover,:focus{
+        &:hover,
+        :focus {
             background-color: $secondary_color;
             color: $primary-color;
         }

@@ -25,10 +25,14 @@
 
     <nav class="r-nav">
       <ul class="nav">
-        <li class="nav-item"><a href="{% url 'login' %}" class="nav-link active">Home</a></li>
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
         <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
         <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link active">Profile</a></li>
+        <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link active">Logout</a></li>
+        {% endif %}
       </ul>
     </nav>
     <div class="menu-btn" id="menu-btn">
@@ -44,15 +48,13 @@
       <div class=" hero overlay">
         <div class="hero_text container">
           <h2>Welcome to the official C.A.T.R.E.C Website</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas blanditiis dolor ratione
-            assumenda. Beatae eligendi
-            perspiciatis rerum cum corrupti suscipit, cumque qui aut expedita adipisci perferendis a
-            dolorum, officiis aperiam!
+          <p>CATREC is an organization under the obafemi awolowo university that is responsible for the
+            allocation of land for business owners and others within the university community.
           </p>
         </div>
         <div class="button">
-          <a href="{% url 'register' %}" target="blank" class="form_links">New Applicants</a>
-          <a href="{% url 'login' %}" target="blank" class="form_links">Existing Applicants</a>
+          <a href="{% url 'register' %}" class="form_links">New Applicants</a>
+          <a href="{% url 'login' %}" class="form_links">Existing Applicants</a>
         </div>
 
       </div>

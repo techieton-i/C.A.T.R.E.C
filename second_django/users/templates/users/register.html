@@ -43,15 +43,26 @@
   </section>
   <!--signup form-->
   <div class="form card">
-    <form action="{% url 'register' %}" autocomplete="on" method="POST">
+    <form action="" autocomplete="on" method="POST">
       {% csrf_token %}
-
-      {% if form.errors %}
-      <p>Your form has errors...</p>
-      {% endif %}
-
-      {{ form.as_p }}
-
+      <div class="form-control">
+        <input type="Email" placeholder="Email" autofocus required required name="email">
+      </div>
+      <div class="form-control">
+        <input type="text" placeholder="First Name" autofocus required required name="first_name">
+      </div>
+      <div class="form-control">
+        <input type="text" placeholder="Last Name" autofocus required required name="last_name">
+      </div>
+      <div class="form-control">
+        <input type="text" placeholder="Registration Number" autofocus required required name="reg_number">
+      </div>
+      <div class="form-control">
+        <input type="password" placeholder="Password" name="password" minlength="8" autofocus required>
+      </div>
+      <div class="form-control">
+        <input type="password" placeholder="Confirm Password" minlength="8" autofocus required>
+      </div>
       <button>Sign Up</button>
 
     </form>

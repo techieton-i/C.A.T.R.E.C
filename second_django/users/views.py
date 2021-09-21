@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 # from django.contrib.auth.forms import PasswordChangeForm
 from .models import SignUpAccess, User, UserProfile
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -16,32 +17,38 @@ def home(request):
 
 def register_user(request):
     user = User
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password1']
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            registration_token = form.cleaned_data['reg_number']
-            SignUpAccess.objects.filter(
-                reg_key=registration_token).update(is_used=True)
-            SignUpAccess.objects.filter(
-                reg_key=registration_token).update(user_email=email)
-            SignUpAccess.objects.filter(reg_key=registration_token).update(
-                user_first_name=first_name)
-            SignUpAccess.objects.filter(reg_key=registration_token).update(
-                user_last_name=last_name)
-            messages.success(request, 'You Have Registered...')
-            return redirect('home')
+    if request.method == "POST":
+        email = request.POST['email']
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        reg_number = request.POST['reg_number']
+        password = request.POST['password']
+        user.objects.create_user(
+            email,
+            first_name,
+            last_name,
+            reg_number,
+            password=password,
+        )
+        #user = authenticate(request, email=email, password=password)
+        SignUpAccess.objects.filter(
+            reg_key=reg_number).update(is_used=True)
+        SignUpAccess.objects.filter(
+            reg_key=reg_number).update(user_email=email)
+        SignUpAccess.objects.filter(reg_key=reg_number).update(
+            user_first_name=first_name)
+        SignUpAccess.objects.filter(reg_key=reg_number).update(
+            user_last_name=last_name)
+        messages.success(request, 'You Have Registered...')
+        user_created = authenticate(request, email=email, password=password)
+        if user_created is not None:
+            login(request, user_created)
+            return redirect('profile')
+        else:
+            return redirect('register')
 
     else:
-        form = CustomUserCreationForm()
-
-    context = {'form': form}
-
-    return render(request, 'users/register.html', context)
+        return render(request, 'users/register.html', {})
 
 
 def login_view(request):
@@ -51,13 +58,24 @@ def login_view(request):
         user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            return redirect('profile')
         else:
             return redirect('login')
     else:
         return render(request, 'users/login.html', {})
 
 
+def logout_view(request):
+    logout(request)
+    return redirect('home')
+
+
+@login_required
+def user_profile(request):
+    return render(request, 'users/profile.html', {})
+
+
+@login_required
 def edit_user_info(request):
     user = User
     if request.method == 'POST':

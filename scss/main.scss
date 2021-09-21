@@ -8,6 +8,7 @@
 body {
     background-color: $body_color;
     font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
 }
 
 img {
@@ -34,7 +35,7 @@ a {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.1em;
     font-family: monospace;
 }
 

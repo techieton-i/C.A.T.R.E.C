@@ -10,4 +10,6 @@ urlpatterns = [
     path('edit/', views.combined_edit, name='combined_edit'),
     path('contact/', views.contact_form, name='contact'),
     path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('profile/', views.user_profile, name='profile'),
 ]
