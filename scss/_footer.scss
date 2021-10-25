@@ -1,0 +1,28 @@
+.footer {
+  color: $text_color;
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 20vh;
+  background-color: $primary-color;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15em;
+
+  &-item {
+    padding: 2em;
+    width: 50%;
+
+    & > * {
+      margin: 1em 0;
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  font: 1.1em sans-serif;
+  padding: 0.5em;
+}

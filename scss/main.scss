@@ -4,89 +4,81 @@
 @import "./form";
 @import "./responsive";
 @import "./profile";
+@import "./footer";
+@import "./contact";
 
 body {
-    background-color: $body_color;
-    font-family: 'Source Sans Pro', sans-serif;
-    overflow-x: hidden;
+  background-color: $body_color;
+  font-family: "Source Sans Pro", sans-serif;
+  overflow-x: hidden;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .container {
-    max-width: 1710px;
-    margin: auto;
+  max-width: 1710px;
+  margin: auto;
 }
 
 header {
-    background-color: $primary_color;
-    color: $text_color;
+  background-color: $primary_color;
+  color: $text_color;
 }
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-    text-decoration: none;
-    color: $text_color;
+  text-decoration: none;
+  color: $text_color;
 }
 
 h2 {
-    font-size: 2.1em;
-    font-family: monospace;
+  font-size: 2.1em;
+  font-family: monospace;
 }
 
 .card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    color: #333;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  color: #333;
 }
 
 .form {
-    margin: 5em auto;
-    width: 50em;
-    height: auto;
+  margin: 5em auto;
+  width: 50em;
+  height: auto;
 }
 
 .login {
-    width: 30em;
-    height: 30em;
-
+  width: 30em;
+  height: 30em;
 }
 
 button {
-    border-radius: 10px;
-    border: none;
-    background: $primary_color;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    text-transform: uppercase;
-    transition: transform 70ms ease-in;
+  border-radius: 10px;
+  border: none;
+  background: $primary_color;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  text-transform: uppercase;
+  transition: transform 70ms ease-in;
 }
 
 .active {
-    color: $secondary_color;
+  color: $secondary_color;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100vw;
-    height: 20vh;
-    background-color: $primary-color;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
