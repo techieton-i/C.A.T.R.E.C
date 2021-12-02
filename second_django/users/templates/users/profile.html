@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My profile</title>
-    <link rel="shortcut icon" href="/asset/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'users\css\main.css' %}" />
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <header class="header">
         <div class="header_brand">
             <div class="header_brand_img">
-                <img src=".././asset/img/index.jpg" alt="logo">
+                <img src="{% static 'users\images\index.jpg' %}" alt="logo">
             </div>
             <span class="header_brand_text">C.A.T.R.E.C</span>
         </div>
@@ -24,10 +25,13 @@
 
         <nav class="r-nav">
             <ul class="nav">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link active">Logout</a></li>
+                {% endif %}
             </ul>
         </nav>
         <div class="menu-btn" id="menu-btn">
@@ -36,16 +40,18 @@
 
     </header>
 
+    {% if user.is_authenticated %}
+
     <!-- main profile section -->
     <section class="details">
         <div>
             <div class="details_name">
                 <h3>Name</h3>
-                <p class="">Odejobi Israel</p>
+                <p class="">{{ user.first_name }} {{ user.last_name }}</p>
             </div>
             <div class="details_name">
                 <h3>Email </h3>
-                <p class="details_email"></p>
+                <p class="details_email">{{ user.email }}</p>
             </div>
             <div class="details_name">
                 <h3>Address</h3>
@@ -67,7 +73,7 @@
             </div>
             <div class="details_name">
                 <h3>Date of allocation of land</h3>
-                <p class="details_date_of_allocation"></p>
+                <p class="details_date_of_allocation">{{ user.user_profile.updated_at }}</p>
 
             </div>
             <div class="details_name">
@@ -75,31 +81,21 @@
                 <p class="details_address"></p>
             </div>
         </div>
-        <div class="">
+        <div class="picture">
+            <!-- <div class="details_img"> -->
             <div class="details_img">
 
+                <img src="{% static 'users\images\bg-hero.jpg' %}" alt="logo" class="profile_pic">
+
             </div>
+            <!--  </div> -->
             <button type="button" class="upload_btn">Upload image</button>
         </div>
 
-
+        {% endif %}
 
     </section>
-
-    <footer>
-        <div class="footer">
-            <div class="footer-item">
-                <h3>Privacy Statement </h2>
-                    <h3>Terms and Conditions of Use</h2>
-            </div>
-            <div class="footer-item">
-                <h3>FAQ</h3>
-                <h3>Contact Us</h3>
-            </div>
-        </div>
-        <h3 class="copyright"><span>&copy;</span> 2021 Obafemi Awolowo University</h3>
-    </footer>
+    <script src="{% static 'users\js\main.js' %}"></script>
 </body>
-
 
 </html>

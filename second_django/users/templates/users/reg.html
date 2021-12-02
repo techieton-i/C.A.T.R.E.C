@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My profile</title>
-    <link rel="shortcut icon" href="/asset/icons/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="{% static 'users\css\main.css' %}">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <header class="header">
         <div class="header_brand">
             <div class="header_brand_img">
-                <img src=".././asset/img/index.jpg" alt="logo">
+                <img src="{% static 'users\images\index.jpg' %}" alt="logo">
             </div>
             <span class="header_brand_text">C.A.T.R.E.C</span>
         </div>
@@ -27,7 +28,7 @@
                 <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
             </ul>
         </nav>
         <div class="menu-btn" id="menu-btn">
@@ -86,20 +87,6 @@
 
     </section>
 
-    <footer>
-        <div class="footer">
-            <div class="footer-item">
-                <h3>Privacy Statement </h2>
-                    <h3>Terms and Conditions of Use</h2>
-            </div>
-            <div class="footer-item">
-                <h3>FAQ</h3>
-                <h3>Contact Us</h3>
-            </div>
-        </div>
-        <h3 class="copyright"><span>&copy;</span> 2021 Obafemi Awolowo University</h3>
-    </footer>
 </body>
-
 
 </html>

@@ -5,7 +5,7 @@ const menuNav = document.querySelector('.nav');
 
 
 let showMenu = false;
-document.parentElement.style.al
+// document.parentElement.style.al;
 
 menuBtn.addEventListener('click', () => {
     if (!showMenu) {
@@ -24,3 +24,11 @@ menuBtn.addEventListener('click', () => {
         showMenu = false;
     }
 });
+
+// const address = document.querySelector('.address');
+// const signUpBtn = document.querySelector('.sign_up');
+
+// signUpBtn.addEventListener('click', function () {
+//     if (!address.textContent) return;
+//     console.log(address.textContent);
+// });

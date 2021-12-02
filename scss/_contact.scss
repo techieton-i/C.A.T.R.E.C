@@ -1,3 +1,17 @@
 .contact {
   height: 62vh;
+  width: 70vw;
+  padding: 4em;
+  margin: auto;
+  align-self: center;
+  font-weight: 400;
+
+  &-box {
+    font-size: 1.5em;
+    width: 100%;
+    margin: 1em;
+    padding: 3em 3em;
+    background-color: #b5c0ca;
+    line-height: 1.5em;
+  }
 }

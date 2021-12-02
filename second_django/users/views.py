@@ -60,6 +60,7 @@ def login_view(request):
             login(request, user)
             return redirect('profile')
         else:
+            messages.error(request, 'Invalid login details')
             return redirect('login')
     else:
         return render(request, 'users/login.html', {})
@@ -74,6 +75,17 @@ def logout_view(request):
 def user_profile(request):
     return render(request, 'users/profile.html', {})
 
+def about(request):
+    return render(request, 'users/about.html', {})
+
+def privacy(request):
+    return render(request, 'users/privacy.html', {})
+
+def terms(request):
+    return render(request, 'users/terms.html', {})
+
+def faqs(request):
+    return render(request, 'users/faqs.html', {})
 
 @login_required
 def edit_user_info(request):

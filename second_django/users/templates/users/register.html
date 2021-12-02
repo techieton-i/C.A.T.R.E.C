@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Log-in</title>
+  <title>Register</title>
   <link rel="stylesheet" href="{% static 'users\css\main.css' %}">
 </head>
 
@@ -26,7 +26,7 @@
     <nav class="r-nav">
       <ul class="nav">
         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
         <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
       </ul>
@@ -49,21 +49,40 @@
         <input type="Email" placeholder="Email" autofocus required required name="email">
       </div>
       <div class="form-control">
-        <input type="text" placeholder="First Name" autofocus required required name="first_name">
+        <input type="text" placeholder="First Name" autofocus name="first_name">
       </div>
       <div class="form-control">
-        <input type="text" placeholder="Last Name" autofocus required required name="last_name">
+        <input type="text" placeholder="Last Name" autofocus name="last_name">
       </div>
       <div class="form-control">
-        <input type="text" placeholder="Registration Number" autofocus required required name="reg_number">
+        <input type="text" placeholder="Registration Number" autofocus name="reg_number">
       </div>
+
+      <!-- jide -->
+      <!-- <div class="form-control address">
+        <input type="text" placeholder="Address" autofocus required>
+      </div>
+      <div class="form-control">
+        <input type="text" placeholder="L.G.A" autofocus required>
+      </div>
+      <div class="form-control">
+        <input type="text" placeholder="Name of Business" autofocus required>
+      </div>
+      <div class="form-control">
+        <input type="text" placeholder="Type of Business" autofocus required>
+      </div>
+      <div class="form-control">
+        <input type="tel" placeholder="Phone no" autofocus required>
+      </div> -->
+      <!-- israel -->
+
       <div class="form-control">
         <input type="password" placeholder="Password" name="password" minlength="8" autofocus required>
       </div>
       <div class="form-control">
         <input type="password" placeholder="Confirm Password" minlength="8" autofocus required>
       </div>
-      <button>Sign Up</button>
+      <button type="submit">Sign Up</button>
 
     </form>
   </div>

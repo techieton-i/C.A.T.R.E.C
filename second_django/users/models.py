@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, IntegrityError
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from users.managers import UserManager
@@ -9,6 +9,16 @@ from .populate import populator
 
 # Create your models here.
 
+class SignUpAccess(models.Model):
+    reg_key = models.CharField(primary_key=True, max_length=12, unique=True)
+    user_email = models.EmailField(max_length=100, blank=True, null=True)
+    user_first_name = models.CharField(max_length=100, blank=True, null=True)
+    user_last_name = models.CharField(max_length=100, blank=True, null=True)
+    is_used = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.reg_key
 
 def validate_reg(value):
     try:
@@ -36,10 +46,11 @@ class User(AbstractUser):
         max_length=12,
         unique=True,
         null=True,
+        blank=True,
         validators=[validate_reg]
     )
-    first_name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
+    first_name = models.CharField(max_length=20, null=True, blank=True)
+    last_name = models.CharField(max_length=20, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -51,6 +62,13 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
 
     objects = UserManager()
+
+    def save(self, *args, **kwargs):
+        try:
+            self.full_clean()
+            super(User, self).save(*args, **kwargs)
+        except IntegrityError:
+            raise ValidationError("error message")
 
 
 class UserProfile(models.Model):
@@ -66,18 +84,6 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.email
-
-
-class SignUpAccess(models.Model):
-    reg_key = models.CharField(primary_key=True, max_length=12, unique=True)
-    user_email = models.EmailField(max_length=100, blank=True, null=True)
-    user_first_name = models.CharField(max_length=100, blank=True, null=True)
-    user_last_name = models.CharField(max_length=100, blank=True, null=True)
-    is_used = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.reg_key
 
 
 class ContactForm(models.Model):

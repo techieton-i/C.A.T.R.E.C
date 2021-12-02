@@ -128,11 +128,9 @@
 }
 
 .hero {
-  height: 70vh;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 2, 122, 0.9)), to(rgba(2, 2, 122, 0.3))),
-  url("{% static 'users\images\bg-hero.jpg' %}");
-  background: linear-gradient(to right, rgba(2, 2, 122, 0.9), rgba(2, 2, 122, 0.3)),
-  url("{% static 'users\images\bg-hero.jpg' %}");
+  height: 62vh;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(2, 2, 122, 0.9)), to(rgba(2, 2, 122, 0.3))), url("/asset/img/bg-hero.jpg");
+  background: linear-gradient(to right, rgba(2, 2, 122, 0.9), rgba(2, 2, 122, 0.3)), url("/asset/img/bg-hero.jpg");
   background-size: cover;
 }
 
@@ -328,41 +326,84 @@
   background-color: #ebebeb;
 }
 
-/* .details_img {
+.details_img {
   border: 3px solid gray;
   height: 210px;
   width: 210px;
   text-align: center;
   margin: 2em 5em;
   border-radius: 10px;
-  background: url("/users/static/users/images/bg-hero.jpg") center;
-} */
-
-.picture {
-  margin-left: 0px;
-  width: min-content
+  background: url("/asset/img/bg-hero.jpg") center;
 }
 
 .profile_pic {
-  border: 3px solid gray;
-  height: 210px;
-  width: 210px;
-  text-align: center;
-  margin: 2em 5em;
-  border-radius: 10px;
-  background-position: center;
-
+  width: 100%;
+  height: 100%;
 }
 
 .upload_btn {
-  width: 210px;
   margin: 2em 7em;
   cursor: pointer;
 }
 
+.footer {
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: 20vh;
+  background-color: #02027A;
+  font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 15em;
+}
+
+.footer-item {
+  padding: 2em;
+  width: 40%;
+}
+
+.footer-item>* {
+  margin: 1em 0;
+}
+
+.copyright {
+  text-align: center;
+  font: 1.1em sans-serif;
+  padding: 0.5em;
+}
+
+.contact {
+  height: 62vh;
+  width: 70vw;
+  padding: 4em;
+  margin: auto;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-weight: 400;
+}
+
+.contact-box {
+  font-size: 1.5em;
+  width: 100%;
+  margin: 1em;
+  padding: 3em 3em;
+  background-color: #b5c0ca;
+  line-height: 1.5em;
+}
+
 body {
   background-color: #aab6c4;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   overflow-x: hidden;
 }
 
@@ -446,12 +487,9 @@ form {
   justify-content: space-around;
 }
 
-footer {
-  position: relative;
-  bottom: 0;
-  width: 100vw;
-  height: 20vh;
-  background-color: #02027A;
+.copy_link {
+  text-decoration: none;
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */

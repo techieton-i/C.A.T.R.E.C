@@ -34,7 +34,15 @@
             <span class="menu-btn_burger"></span>
         </div>
 
+
     </header>
+
+    {% if messages %}
+    {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    {% endif %}
+
     <!--login form-->
     <div class="form card login">
         <form action="" autocomplete="on" method="POST">

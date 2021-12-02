@@ -26,9 +26,9 @@
     <nav class="r-nav">
       <ul class="nav">
         <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="" class="nav-link">FAQ</a></li>
-        <li class="nav-item"><a href="" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact Us</a></li>
         {% if user.is_authenticated %}
         <li class="nav-item"><a href="{% url 'profile' %}" class="nav-link active">Profile</a></li>
         <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link active">Logout</a></li>
@@ -48,7 +48,7 @@
       <div class=" hero overlay">
         <div class="hero_text container">
           <h2>Welcome to the official C.A.T.R.E.C Website</h2>
-          <p>CATREC is an organization under the obafemi awolowo university that is responsible for the
+          <p>CATREC is an organization under the Obafemi Awolowo University that is responsible for the
             allocation of land for business owners and others within the university community.
           </p>
         </div>
@@ -61,7 +61,20 @@
     </section>
   </main>
   <footer>
-
+    <div class="footer">
+      <div class="footer-item">
+        <h3 class="nav-link"> <a href="{% url 'privacy' %}">Privacy Statement</a></h3>
+        <h3 class="nav-link"> <a href="{% url 'terms' %}">Terms and Conditions</a></h2>
+      </div>
+      <div class="footer-item">
+        <h3 class="nav-link"> <a href="{% url 'faqs' %}">FAQ</a></h3>
+        <h3 class="nav-link"> <a href="{% url 'contact' %}">Contact Us</a></h3>
+      </div>
+    </div>
+    <h3 class="copyright"><span>&copy;</span> 2021 <a class="copy_link" target="blank"
+        href="https://www.oauife.edu.ng">Obafemi Awolowo
+        University</a>
+    </h3>
   </footer>
   <script src="{% static 'users\js\main.js' %}"></script>
   <a href=""></a>

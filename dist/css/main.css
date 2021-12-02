@@ -127,7 +127,7 @@
 }
 
 .hero {
-  height: 70vh;
+  height: 62vh;
   background: -webkit-gradient(linear, left top, right top, from(rgba(2, 2, 122, 0.9)), to(rgba(2, 2, 122, 0.3))), url("/asset/img/bg-hero.jpg");
   background: linear-gradient(to right, rgba(2, 2, 122, 0.9), rgba(2, 2, 122, 0.3)), url("/asset/img/bg-hero.jpg");
   background-size: cover;
@@ -354,7 +354,7 @@
 
 .footer-item {
   padding: 2em;
-  width: 50%;
+  width: 40%;
 }
 
 .footer-item > * {
@@ -369,6 +369,22 @@
 
 .contact {
   height: 62vh;
+  width: 70vw;
+  padding: 4em;
+  margin: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: 400;
+}
+
+.contact-box {
+  font-size: 1.5em;
+  width: 100%;
+  margin: 1em;
+  padding: 3em 3em;
+  background-color: #b5c0ca;
+  line-height: 1.5em;
 }
 
 body {
